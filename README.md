@@ -115,11 +115,62 @@ timelinesJs.addDot( ctx, {
 });
 ```
 
+## Adding title to the dots.
+Overwrite the `title` attribute by setting up this parameter.
+
+```javascript
+// 1793
+timelinesJs.addDot( ctx, {
+	id: '1793-dot',
+	left: false,
+	title: 'The Reign of Terror',
+});
+```
+
 ## Showing an 'add note' button.
+Add an 'add note' button after the last note, with a call back funtion for a custom event when the user clicks on it.
+
+```javascript
+// 1789
+timelinesJs.addDot( ctx, {
+	id: '1789-dot',
+	left: true,
+	add_button: true, // default value is false
+	add_button_title: 'Add more information', // default value is ''
+	on_click_add_button: function() {
+		alert('Add more useful information about the 1789 this event!');
+	},
+});
+```
 
 ## Adding a note.
+Adding a note when the user clicks on the 'add note' button is the same than adding a note at anyother place in the code.
+
+```javascript
+// 1789
+timelinesJs.addDot( ctx, {
+	id: '1789-dot',
+	left: true,
+	add_button: true, // default value is false
+	add_button_title: 'Add more information', // default value is ''
+	on_click_add_button: function() {
+
+		timelinesJs.addNote( ctx, '1789-dot', {
+			id: '1789-3',
+			html: '<b>The Reign of Terror</b>, commonly <b>The Terror</b> (French: la Terreur), was a period of the French Revolution when, following the creation of the First French Republic, a series of massacres and numerous public executions took place in response to revolutionary fervour',
+		});
+
+	},
+});
+```
 
 ## Removing a note.
+
+```javascript
+	$('#remove').click(function() {
+		timelinesJs.removeNote( ctx, '1789-dot', '1789');		
+	});
+```
 
 ## HTML vs Plain-Text notes.
 
@@ -129,9 +180,6 @@ timelinesJs.addDot( ctx, {
 
 ## Adding a 'delete' button to a note.
 
-
-# Functions in Version 1.0.1
-Here are listed each one of the features provided by **Timelines.Js**.
 
 ## timelinesJs.version()
 Returns the version of this **Templates.Js** library.

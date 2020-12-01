@@ -39,7 +39,12 @@
 			add_button: true, // default value is false
 			add_button_title: 'Add more information', // default value is ''
 			on_click_add_button: function() {
-				alert('Add more useful information about the 1789 this event!');
+		
+				timelinesJs.addNote( ctx, '1789-dot', {
+					id: '1789-3',
+					html: '<b>The Reign of Terror</b>, commonly <b>The Terror</b> (French: la Terreur), was a period of the French Revolution when, following the creation of the First French Republic, a series of massacres and numerous public executions took place in response to revolutionary fervour',
+				});
+		
 			},
 		});
 
@@ -76,8 +81,9 @@
 		});
 
 	});
+	
 	$('#remove').click(function() {
-		timelinesJs.removeNote( ctx, 'invitation-messages', 'ABF1-guid');		
+		timelinesJs.removeNote( ctx, '1789-dot', '1789');		
 	});
 </script>
 
