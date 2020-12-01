@@ -36,11 +36,21 @@
 		timelinesJs.addDot( ctx, {
 			id: '1789-dot',
 			left: true,
+			add_button: true, // default value is false
+			add_button_title: 'Add more information', // default value is ''
+			on_click_add_button: function() {
+				alert('Add more useful information about the 1789 this event!');
+			},
 		});
 
 		timelinesJs.addNote( ctx, '1789-dot', {
 			id: '1789',
 			html: '<b>July 14, 1789:</b> Parisian mobs storm the Bastille, and the French Revolution begins.',
+		});
+
+		timelinesJs.addNote( ctx, '1789-dot', {
+			id: '1789-2',
+			html: 'Prison symbolizing power of Old Regime.',
 		});
 
 		// 1793

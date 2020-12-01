@@ -25,7 +25,7 @@ All these files are included in this project. You can download them from this pa
 <link href="./css/commons.css" media="all" rel="stylesheet" type="text/css" id="commons-css">
 ```
 
-3. Create a nice prefilled form.
+3. Create a nice timeline.
 
 ```html
 <link rel="stylesheet" href="./timelines.css">
@@ -83,7 +83,37 @@ All these files are included in this project. You can download them from this pa
 # Features in Version 1.0.1
 Here are listed each one of the features provided by **Timelines.Js**.
 
+## Adding more than one note per dot.
+Notes will be added one under the other.
+
+```javascript
+// 1789
+timelinesJs.addDot( ctx, {
+	id: '1789-dot',
+	left: true,
+});
+
+timelinesJs.addNote( ctx, '1789-dot', {
+	id: '1789',
+	html: '<b>July 14, 1789:</b> Parisian mobs storm the Bastille, and the French Revolution begins.',
+});
+
+timelinesJs.addNote( ctx, '1789-dot', {
+	id: '1789-2',
+	html: 'Prison symbolizing power of Old Regime.',
+});
+```
+
 ## Placing notes in either the left or right side of the timeline.
+Set the `left` parameter as `false` to show the dot's notes in the right side.
+
+```javascript
+// 1793
+timelinesJs.addDot( ctx, {
+	id: '1793-dot',
+	left: false,
+});
+```
 
 ## Showing an 'add note' button.
 
