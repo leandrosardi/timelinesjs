@@ -23,6 +23,7 @@
 <body>
 	<h1>The French Revolution's Timeline</h1>
 	<button id='remove'>remove note</button>
+	<button id='get_value'>get note value</button>
 	<div id='myTimeline'> <!-- draw timeline here --> </div>
 </body>
 
@@ -43,6 +44,7 @@
 				timelinesJs.addNote( ctx, '1789-dot', {
 					id: '1789-3',
 					html: '<b>The Reign of Terror</b>, commonly <b>The Terror</b> (French: la Terreur), was a period of the French Revolution when, following the creation of the First French Republic, a series of massacres and numerous public executions took place in response to revolutionary fervour',
+					before: '1789-2',
 				});
 		
 			},
@@ -88,6 +90,10 @@
 	
 	$('#remove').click(function() {
 		timelinesJs.removeNote( ctx, '1789-dot', '1789');		
+	});
+
+	$('#get_value').click(function() {
+		alert( timelinesJs.getNoteValue( ctx, '1789-dot', '1789') );
 	});
 </script>
 

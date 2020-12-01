@@ -145,6 +145,7 @@ timelinesJs.addDot( ctx, {
 
 ## Adding a note
 Adding a note when the user clicks on the 'add note' button is the same than adding a note at anyother place in the code.
+By default, the note will be added below the last one.
 
 ```javascript
 // 1789
@@ -164,13 +165,24 @@ timelinesJs.addDot( ctx, {
 });
 ```
 
+## Setting note position
+You can also add a note before another exisiting one.
+
+```javascript
+timelinesJs.addNote( ctx, '1789-dot', {
+	id: '1789-3',
+	html: '<b>The Reign of Terror</b>, commonly <b>The Terror</b> (French: la Terreur), was a period of the French Revolution when, following the creation of the First French Republic, a series of massacres and numerous public executions took place in response to revolutionary fervour',
+	before: '1789-2',
+});
+```
+
 ## Removing a note
 That is so easy.
 
 ```javascript
-	$('#remove').click(function() {
-		timelinesJs.removeNote( ctx, '1789-dot', '1789');		
-	});
+$('#remove').click(function() {
+	timelinesJs.removeNote( ctx, '1789-dot', '1789');		
+});
 ```
 
 ## HTML vs Plain-Text notes
@@ -225,9 +237,24 @@ timelinesJs.addNote( ctx, '1789-dot', {
 });
 ```
 
-## Replacing a note
+## Getting HTML value of a note
+If you need to get the note content in HTML format.
 
-## Getting note content
+```javascript
+$('#get_value').click(function() {
+	alert( timelinesJs.getNoteHTML( ctx, '1789-dot', '1789') );
+});
+```
+
+## Getting plain-text value of a note
+If you need to get the note content in raw plain-text format.
+
+```javascript
+$('#get_value').click(function() {
+	alert( timelinesJs.getNoteText( ctx, '1789-dot', '1789') );
+});
+```
+
 
 # Deployment 
 The **Timelines.Js** requires the [**Commons.JS 1.0.3**](https://github.com/leandrosardi/commonsjs/), [**JQuery 3.5.1**](https://jquery.com/download/) and the ***AdminFlare 1.0.3** library used internally at [**ExpandedVenture**](https://expandedventure.com/expandedventure).
