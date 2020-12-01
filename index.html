@@ -51,6 +51,10 @@
 		timelinesJs.addNote( ctx, '1789-dot', {
 			id: '1789',
 			html: '<b>July 14, 1789:</b> Parisian mobs storm the Bastille, and the French Revolution begins.',
+			edit_button: true,
+			on_click_edit_button: function() {
+				alert('Open a popup for edition');
+			},
 		});
 
 		timelinesJs.addNote( ctx, '1789-dot', {

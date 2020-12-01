@@ -83,7 +83,7 @@ All these files are included in this project. You can download them from this pa
 # Features in Version 1.0.1
 Here are listed each one of the features provided by **Timelines.Js**.
 
-## Adding more than one note per dot.
+## Adding more than one note per dot
 Notes will be added one under the other.
 
 ```javascript
@@ -104,7 +104,7 @@ timelinesJs.addNote( ctx, '1789-dot', {
 });
 ```
 
-## Placing notes in either the left or right side of the timeline.
+## Placing notes in either the left or right side of the timeline
 Set the `left` parameter as `false` to show the dot's notes in the right side.
 
 ```javascript
@@ -115,7 +115,7 @@ timelinesJs.addDot( ctx, {
 });
 ```
 
-## Adding title to the dots.
+## Adding title to the dots
 Overwrite the `title` attribute by setting up this parameter.
 
 ```javascript
@@ -127,8 +127,8 @@ timelinesJs.addDot( ctx, {
 });
 ```
 
-## Showing an 'add note' button.
-Add an 'add note' button after the last note, with a call back funtion for a custom event when the user clicks on it.
+## Showing an 'add note' button
+Add an 'add note' button after the last note, with a callback function for a custom event when the user clicks on it.
 
 ```javascript
 // 1789
@@ -143,7 +143,7 @@ timelinesJs.addDot( ctx, {
 });
 ```
 
-## Adding a note.
+## Adding a note
 Adding a note when the user clicks on the 'add note' button is the same than adding a note at anyother place in the code.
 
 ```javascript
@@ -164,7 +164,7 @@ timelinesJs.addDot( ctx, {
 });
 ```
 
-## Removing a note.
+## Removing a note
 
 ```javascript
 	$('#remove').click(function() {
@@ -172,19 +172,61 @@ timelinesJs.addDot( ctx, {
 	});
 ```
 
-## HTML vs Plain-Text notes.
+## HTML vs Plain-Text notes
+Use the `text` parameter instead `html` to show the note's content as raw plain-text instead HTML.
 
-## Adding an 'edit' button to a note.
+```javascript
+timelinesJs.addNote( ctx, '1789-dot', {
+	id: '1789',
+	text: '<b>July 14, 1789:</b> Parisian mobs storm the Bastille, and the French Revolution begins.', // the <b> and </b> will be displayed, and not bold text will appear.
+});
+```
 
-## Adding a 'copy' button to a note.
+## Adding an 'edit' button to a note
+Add an 'edit' button to a note, with a callback function for a custom event when the user clicks on it.
 
-## Adding a 'delete' button to a note.
+```javascript
+timelinesJs.addNote( ctx, '1789-dot', {
+	id: '1789',
+	html: '<b>July 14, 1789:</b> Parisian mobs storm the Bastille, and the French Revolution begins.',
+	edit_button: true,
+	on_click_edit_button: function() {
+		alert('Open a popup for edition');
+	},
+});
+```
 
+## Adding a 'copy' button to a note
+Add a 'copy' button to a note, with a callback function for a custom event when the user clicks on it.
 
-## timelinesJs.version()
-Returns the version of this **Templates.Js** library.
+```javascript
+timelinesJs.addNote( ctx, '1789-dot', {
+	id: '1789',
+	html: '<b>July 14, 1789:</b> Parisian mobs storm the Bastille, and the French Revolution begins.',
+	copy_button: true,
+	on_click_copy_button: function() {
+		alert('Add new new note with a new ID and the same content like this note.');
+	},
+});
+```
 
+## Adding a 'delete' button to a note
+Add a 'delete' button to a note, with a callback function for a custom event when the user clicks on it.
 
+```javascript
+timelinesJs.addNote( ctx, '1789-dot', {
+	id: '1789',
+	html: '<b>July 14, 1789:</b> Parisian mobs storm the Bastille, and the French Revolution begins.',
+	delete_button: true,
+	on_click_delete_button: function() {
+		alert('Delete this note.');
+	},
+});
+```
+
+## Replacing a note
+
+## Getting note content
 
 # Deployment 
 The **Timelines.Js** requires the [**Commons.JS 1.0.3**](https://github.com/leandrosardi/commonsjs/), [**JQuery 3.5.1**](https://jquery.com/download/) and the ***AdminFlare 1.0.3** library used internally at [**ExpandedVenture**](https://expandedventure.com/expandedventure).
