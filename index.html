@@ -23,7 +23,8 @@
 <body>
 	<h1>The French Revolution's Timeline</h1>
 	<button id='remove'>remove note</button>
-	<button id='get_value'>get note value</button>
+	<button id='get_html'>get note html</button>
+	<button id='get_text'>get note text</button>
 	<div id='myTimeline'> <!-- draw timeline here --> </div>
 </body>
 
@@ -92,8 +93,12 @@
 		timelinesJs.removeNote( ctx, '1789-dot', '1789');		
 	});
 
-	$('#get_value').click(function() {
-		alert( timelinesJs.getNoteValue( ctx, '1789-dot', '1789') );
+	$('#get_html').click(function() {
+		alert( timelinesJs.getNoteHTML( ctx, '1789-dot', '1789') );
+	});
+
+	$('#get_text').click(function() {
+		alert( timelinesJs.getNoteText( ctx, '1789-dot', '1789') );
 	});
 </script>
 
