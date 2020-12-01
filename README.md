@@ -165,6 +165,7 @@ timelinesJs.addDot( ctx, {
 ```
 
 ## Removing a note
+That is so easy.
 
 ```javascript
 	$('#remove').click(function() {
