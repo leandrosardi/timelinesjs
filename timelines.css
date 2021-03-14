@@ -30,6 +30,9 @@
   left: 50%;
   margin-left: -3px;
 }
+
+
+
 		
 /* Container around content */
 .timeline .container {
@@ -57,6 +60,9 @@
 .timeline .left {
   left: 0;
 }
+		
+		
+		
 		
 /* Place the container to the right */
 .timeline .right {
@@ -95,36 +101,38 @@
 .timeline .right::after {
   left: -16px;
 }
-	
+
+
 /* The actual content */
 .timeline .content {
-  padding: 20px 30px;
+  padding: 30px 10px 10px 10px;
+  padding-right: 5px;
   background-color: rgb(225,225,225);
   position: relative;
   border-radius: 6px;
-  margin-bottom: 17px;
+  margin-bottom:7px;
 }
 
 /* Big rounded area to place an action button like add or remove */
 .timeline .action {
   padding: 20px 30px;
-
   background-color: rgb(225,225,225);
   position: relative;
   border-radius: 6px;
   font-size: 24px;
-  margin-bottom: 17px;
 }
 		
 /* Small icons in the top-right corner of the content */
 .timeline .content .actions {
 	position:absolute;
-	top:5px;
-	right:5px;
+	top:0px;
+	right:3px;
+	background: transparent;
 }
-.timeline .content .actions a {
-	margin-left: 5px;
+.timeline .content .actions button {
 	text-decoration: none;
+	background: transparent;
+	width: 5px;
 }
 		
 /* Media queries - Responsive timeline on screens less than 600px wide */

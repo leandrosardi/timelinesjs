@@ -2,7 +2,11 @@
  * Style for contextual menu button.
  *
 */
-.simple {
+button.simple {
+	text-decoration: none;
+}
+
+a.simple {
 	text-decoration: none;
 }
 
@@ -12,5 +16,18 @@
 }
 
 .menu-link:hover {
+	text-decoration: none;
 	opacity: 1.0;
+}
+
+.menu-link-large {
+	text-decoration: none;
+	opacity: 0.5;
+	font-size: 26px;
+}
+
+.menu-link-large:hover {
+	text-decoration: none;
+	opacity: 1.0;
+	font-size: 26px;
 }
